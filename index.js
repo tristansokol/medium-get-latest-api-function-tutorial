@@ -7,6 +7,11 @@ exports.getLatest = (req, res) => {
       console.error(response);
       console.error(error);
     }
+    res.set({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+    })
     res.send(JSON.parse(body.substring(16)));
   });
 };
